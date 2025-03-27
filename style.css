@@ -1,66 +1,122 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-    background: linear-gradient(135deg, #72c2ff, #0061a8);
-    min-height: 100vh;
-    color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #107cc4, #fa2803);
+  color: black;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  display: flex; /* Corrected: added missing semicolon */
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 input {
-    padding: 12px 15px;
-    width: 60%;
-    margin-right: 10px;
-    border: none;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.8);
-    font-size: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 button {
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 button:hover {
-    background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.3);
 }
 
-#weather {
-    margin-top: 30px;
+#weather-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
 }
 
-.weather-icon {
-    font-size: 80px;
-    margin: 15px 0;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+#temp-div {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
-.weather-info {
-    font-size: 18px;
-    margin: 8px 0;
+#weather-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 10px;
 }
 
-.temp {
-    font-size: 48px;
-    font-weight: bold;
-    margin: 10px 0;
+#soil-data {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: center;
 }
+
+.sensor-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.sensor-status {
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#forecast-items {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.forecast-item {
+  flex: 0 0 auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  min-width: 80px;
+}
+
+/* Tinkercad connection status */
+.connected {
+  background: rgba(46, 125, 50, 0.3);
+}
+
+.disconnected {
+  background: rgba(198, 40, 40, 0.3);
+}
+
