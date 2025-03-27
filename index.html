@@ -1,25 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App with Icons</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather & Soil App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1><i class="fas fa-cloud-sun"></i> Weather App</h1>
-        <div>
-            <input type="text" id="city" placeholder="Enter city name">
-            <button onclick="getWeather()"><i class="fas fa-search"></i> Search</button>
-        </div>
-        
-        <div id="weather">
-            <!-- Weather data will appear here -->
-        </div>
+  <div class="container">
+    <h1><i class="fas fa-cloud-sun"></i> Weather & Soil Monitor</h1>
+    
+    <div class="input-group">
+      <input type="text" id="city" placeholder="Enter city name">
+      <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+      <button id="connect-btn"><i class="fas fa-microchip"></i> Connect Arduino</button>
     </div>
+    
+    <div id="weather-data">
+      <div id="current-weather">
+        <img id="weather-icon" src="" alt="Weather Icon">
+        <div id="temp-div">-</div>
+        <div id="weather-desc">Enter city to begin</div>
+      </div>
+      
+      <div id="weather-info">
+        <div><i class="fas fa-tint"></i> Humidity: <span id="humidity">-</span>%</div>
+        <div><i class="fas fa-wind"></i> Wind: <span id="wind-speed">-</span> m/s</div>
+      </div>
+    </div>
+    
+    <div id="soil-data">
+      <h3><i class="fas fa-seedling"></i> Soil Moisture</h3>
+      <div class="sensor-value" id="moisture-level">-</div>
+      <div class="sensor-status" id="soil-status">Disconnected</div>
+    </div>
+    
+    <div id="hourly-forecast">
+      <h3>Hourly Forecast</h3>
+      <!-- Changed class name to 'forecast-items' from 'forecast-container' to match the CSS ID -->
+      <div id="forecast-items"></div>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
